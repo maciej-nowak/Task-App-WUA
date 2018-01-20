@@ -1,0 +1,1 @@
+C:\Users\Maciej\Desktop\Lab4Workers\TaskApp\TaskApp.WindowsPhone\TaskApp.WindowsPhone.csproj;neutral

@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="Lab4Workers.WorkersList"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Lab4Workers"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    
+    <Page.Resources>
+               <DataTemplate x:Key="WorkersListBoxTemplate">
+            <StackPanel>
+                <TextBlock Text="{Binding OwnerId}"></TextBlock>
+                <TextBlock Text="{Binding Title}"></TextBlock>
+                <TextBlock Text="{Binding Value}"></TextBlock>
+                <TextBlock Text="{Binding Id}"></TextBlock>
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
+
+    <ScrollViewer>
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0"  FontSize="30">Workers List</TextBlock>
+            <TextBox Grid.Row="1" x:Name="OwnerId" Text="OwnerId"></TextBox>
+            <TextBox Grid.Row="2" x:Name="Title" Text="Title"></TextBox>
+            <TextBox Grid.Row="3" x:Name="Value" Text="Value"></TextBox>
+            <Button Grid.Row="4" Click="OnAddNewWorkerClick">Add new worker</Button>
+            <ListBox Grid.Row="5" x:Name="WorkersListBox" ItemTemplate="{StaticResource WorkersListBoxTemplate}"></ListBox>
+        </Grid>
+    </ScrollViewer>
+</Page>
